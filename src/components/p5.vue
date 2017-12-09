@@ -8,13 +8,13 @@
     <div id="canvas">
     </div>
     <div class="columns">
-      <div class="column is-4 has-text-left">
+      <div class="column is-3 has-text-left">
         <button class="button is-info" v-on:click="next">Następny</button>
       </div>
-      <div class="column is-4">
-        <p class="has-text-centered">Położenie myszki na planszy (kliknij aby zaktualizować): <br>(<strong>{{tileX}},{{tileY}}</strong>)</p>
+      <div class="column is-6">
+        <p class="has-text-centered">Położenie myszki na planszy <i>(kliknij aby zaktualizować)</i>: <br>(<strong>{{tileX}},{{tileY}}</strong>)</p>
       </div>
-      <div class="column is-4 has-text-right">
+      <div class="column is-3 has-text-right">
 
         <button class="button is-success" v-on:click="end">Przewiń do końca</button>
       </div>

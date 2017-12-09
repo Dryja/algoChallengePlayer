@@ -15,6 +15,9 @@ export default {
   components: {
     p5,
     rTable
+  },
+  created: function() {
+    window.document.title = "Podgląd wyników"
   }
 }
 </script>
