@@ -146,7 +146,7 @@ export default {
   },
   methods: {
     end() {
-      for (var i = 0; i < this.jData.moves.length; i++) {
+      for (var i = this.round; i <= this.jData.moves.length; i++) {
         this.next();
       }
     },
@@ -185,8 +185,11 @@ export default {
         if (this.jData.winner === 2) {
           this.winner = this.jData.player1;
         }
-        else {
+        else if (this.jData.winner === 3) {
           this.winner = this.jData.player2;
+        }
+        else {
+          alert("Bład w pliku wejściowym");
         }
         this.p5drawing.drawMap(this.jData.gridSize, this.jData.begining, this);
         //this.p5drawing.drawRound(this.jData.gridSize, this.jData.begining);
