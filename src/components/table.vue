@@ -2,7 +2,7 @@
 <div class="container">
   <h1 class="title">Wyniki:</h1>
   <div>
-    <vue-good-table title="" :columns="columns" :rows="rows" :paginate="false" :lineNumbers="true" />
+    <vue-good-table title="" :columns="columns" :rows="rows" :paginate="false" :lineNumbers="true" :globalSearch="true" />
   </div>
 </div>
 </template>
@@ -16,7 +16,6 @@ function loadJSON(callback) {
   xobj.open('GET', 'static/table.json', true); // Replace 'my_data' with the path to your file
   xobj.onreadystatechange = function() {
     if (xobj.readyState == 4 && xobj.status == "200") {
-      // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
       callback(xobj.responseText);
     }
   };
@@ -30,7 +29,6 @@ export default {
       columns: [{
           label: 'Nazwa gracza',
           field: 'name',
-          filterable: true,
         },
         {
           label: 'Wygrane',
@@ -50,7 +48,8 @@ export default {
     var that = this;
     loadJSON(function(response) {
       // Parse JSON string into object
-      this.rows = JSON.parse(response);
+      that.rows = JSON.parse(response);
+      console.log(response);
     });
   }
 }
