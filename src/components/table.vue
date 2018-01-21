@@ -32,12 +32,42 @@ export default {
         },
         {
           label: 'Wygrane',
-          field: 'won',
+          field: 'wins',
+          type: 'number',
+        },
+        {
+          label: 'Wygrane przez błąd',
+          field: 'errorWins',
           type: 'number',
         },
         {
           label: 'Przegrane',
-          field: 'lost',
+          field: 'loses',
+          type: 'number',
+        },
+        {
+          label: 'Przegrane przez błąd',
+          field: 'errorLoses',
+          type: 'number',
+        },
+        {
+          label: 'Move not valid',
+          field: '487',
+          type: 'number',
+        },
+        {
+          label: 'Wrong Process Response',
+          field: '501',
+          type: 'number',
+        },
+        {
+          label: 'Process Timed out',
+          field: '504',
+          type: 'number',
+        },
+        {
+          label: 'Unknown/Unidentified Error',
+          field: '523',
           type: 'number',
         },
       ],
